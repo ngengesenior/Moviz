@@ -19,6 +19,8 @@ TMDB_KEY="YOUR API KEY"
 
 ![Reviews](screenshots/reviews.png)
 
+Improvements are still being made to the project and it is in continuous development
+
 ## Gratitude
 [The Movie Database API](https://developers.themoviedb.org/3/getting-started/introduction)
 [Retrofits library](https://square.github.io/retrofit/)
