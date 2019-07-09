@@ -23,5 +23,7 @@ Improvements are still being made to the project and it is in continuous develop
 
 ## Gratitude
 [The Movie Database API](https://developers.themoviedb.org/3/getting-started/introduction)
+
 [Retrofits library](https://square.github.io/retrofit/)
+
 [Epoxy Library](https://github.com/airbnb/epoxy)
