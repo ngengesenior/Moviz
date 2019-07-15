@@ -12,12 +12,16 @@ import retrofit2.Response
 import java.util.concurrent.Executor
 
 
-class PageKeyedMoviesDataSource (val tmdbService: TmdbService,
+class PageKeyedMoviesDataSource (
                                  val type:String,
                                         retryExecutor: Executor
 ) : PageKeyedDataSource<Int, Movie>()
 
 {
+    val tmdbService:TmdbService by lazy {
+        TmdbService.create()
+    }
+
     var initialParams: LoadInitialParams<Int>? = null
     var afterParams: LoadParams<Int>? = null
     var retry: (() -> Any)? = null

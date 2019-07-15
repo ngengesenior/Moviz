@@ -8,11 +8,11 @@ import com.example.moviz.data.Movie
 
 
 
-class PageKeyMoviesFactory(val tmdbService: TmdbService,val type:String, val retryExecutor:Executor):DataSource.Factory<Int, Movie>() {
+class PageKeyMoviesFactory(val type:String, val retryExecutor:Executor):DataSource.Factory<Int, Movie>() {
 
     val popularMoviesMutableData = MutableLiveData<PageKeyedMoviesDataSource>()
     override fun create(): DataSource<Int, Movie> {
-        val moviesDataSource = PageKeyedMoviesDataSource(tmdbService,type,retryExecutor)
+        val moviesDataSource = PageKeyedMoviesDataSource(type,retryExecutor)
         popularMoviesMutableData.postValue(moviesDataSource)
         return moviesDataSource
     }

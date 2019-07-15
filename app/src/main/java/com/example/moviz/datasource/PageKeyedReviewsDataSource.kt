@@ -14,12 +14,15 @@ import retrofit2.Response
 import java.util.concurrent.Executor
 
 
-class PageKeyedReviewsDataSource (val tmdbService: TmdbService,
+class PageKeyedReviewsDataSource (
                                  val id:Int,
                                  retryExecutor: Executor
 ) : PageKeyedDataSource<Int, Review>()
 
 {
+    private val tmdbService:TmdbService by lazy {
+        TmdbService.create()
+    }
     var initialParams: LoadInitialParams<Int>? = null
     var afterParams: LoadParams<Int>? = null
     var retry: (() -> Any)? = null
